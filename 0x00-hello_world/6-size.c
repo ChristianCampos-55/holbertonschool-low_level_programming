@@ -6,10 +6,10 @@
  */
 int main(void)
 {
-int 1;
+int i;
 double d;
 char c;
-float f:
+float f;
 
 printf("The size of an int is: %lu.\n", (unsigned long)sizeof(i));
 printf("The size of an int is: %lu.\n", (unsigned long)sizeof(d));
