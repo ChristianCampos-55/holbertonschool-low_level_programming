@@ -1,4 +1,4 @@
-#include <studio.h>
+#include <stdio.h>
 /**
  * main - Entry point
  *
@@ -6,14 +6,10 @@
  */
 int main(void)
 {
-int i;
-char c;
-long l;
-float f;
-printf("The size of a char is: %lu.\n", (unsigned long)sizeof(c));
-printf("The size of an int is: %lu.\n", (unsigned long)sizeof(i));
-printf("The size of a long int is: %lu.\n", (unsigned long)sizeof(l));
-printf("The size of a long long int is: %lu.\n", (unsigned long)sizeof(l));
-printf("The size of a float is: %lu.\n", (unsigned long)sizeof(f));
+printf("The size of a char is: %lu.\n", sizeof(char));
+printf("The size of an int is: %lu.\n", sizeof(int));
+printf("The size of a long int is: %lu.\n", sizeof(long int));
+printf("The size of a long long int is: %lu.\n", sizeof(long long int));
+printf("The size of a float is: %lu.\n", sizeof(float));
 return (0);
 }
