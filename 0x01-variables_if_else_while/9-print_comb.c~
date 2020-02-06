@@ -8,10 +8,13 @@ int main(void)
 {
 	int x;
 
-	for (x = 'a'; x <= 'z'; x++)
-	{
-		if (x != 'q' && x != 'e')
-			putchar(x);
+	for (x = '0'; x <= '9'; x++){
+		putchar(x);
+		if (x != '9')
+		{
+			putchar(44);
+			putchar(32);
+		}
 	}
 	putchar(10);
 	return (0);
