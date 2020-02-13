@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * mult - check the code for Holberton School students.
+ * mul - check the code for Holberton School students.
  * @a: number to multiply
  * @b: number to multiply
  *
