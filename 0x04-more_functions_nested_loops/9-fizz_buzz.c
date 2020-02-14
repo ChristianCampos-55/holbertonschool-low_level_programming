@@ -7,12 +7,11 @@
  */
 int main(void)
 {
-  int a = 0;
+  int a = 1;
   int b = 100;
 
   while (a < b)
     {
-      a++;
       if (a != 1)
 	{
 	  printf(" ");
@@ -29,6 +28,7 @@ int main(void)
 	{
 	  printf("%i", a);
 	}
+      a++;
     }
   printf("\n");
 }
