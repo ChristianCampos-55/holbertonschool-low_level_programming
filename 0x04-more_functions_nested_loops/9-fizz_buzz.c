@@ -7,28 +7,28 @@
  */
 int main(void)
 {
-int a = 0;
-int b = 100;
+  int a = 0;
+  int b = 100;
 
-while (a < b)
-{
-a++;
-if (a != 1)
-{
-printf(" ");
-}
-if (a % 3 == 0)
-{
-printf("Fizz");
-}
-if (a % 5 == 0)
-{
-printf("Buzz");
-}
-if (!(a % 3 == 0 || a % 5 == 0))
-{
-printf("%i", a);
-}
-}
- printf("\n");
+  while (a < b)
+    {
+      a++;
+      if (a != 1)
+	{
+	  printf(" ");
+	}
+      if (a % 3 == 0)
+	{
+	  printf("Fizz");
+	}
+      if (a % 5 == 0)
+	{
+	  printf("Buzz");
+	}
+      if (!(a % 3 == 0 || a % 5 == 0))
+	{
+	  printf("%i", a);
+	}
+    }
+  printf("\n");
 }
