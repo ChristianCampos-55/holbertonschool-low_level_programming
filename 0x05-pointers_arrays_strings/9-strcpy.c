@@ -15,5 +15,6 @@ for (cont = 0; src[cont] != '\0'; cont++)
 {
 dest[cont] = src[cont];
 }
+dest[cont] = src[cont];
 return (dest);
 }
