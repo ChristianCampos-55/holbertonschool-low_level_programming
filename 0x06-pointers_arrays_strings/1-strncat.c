@@ -4,21 +4,24 @@
  * _strncat - concatenate two strings.
  * @dest: String to copy to.
  * @src: String to copy from.
+ * @n: Number of elements to overwite.
  * Return: Always 0.
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int count;
-	int add;
+	int count = 0;
+	int add = 0;
 
-	for (count = 0; dest[count] != '\0'; count++)
+	while (dest[count] != '\0')
 	{
-
+		count++;
 	}
 
-	for (add = 0; add <= count && src[add] != '\0' && add < n; add++)
+	while (src[add] != '\0' && add < n)
 	{
 		dest[count + add] = src[add];
+		count++;
+		add++;
 	}
 	return (dest);
 }
