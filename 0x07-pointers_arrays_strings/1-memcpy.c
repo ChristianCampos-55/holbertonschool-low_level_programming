@@ -1,4 +1,4 @@
-for #include "holberton.h"
+#include "holberton.h"
 
 /**
  * _memcpy - assigns a char to a pointed adress
