@@ -17,10 +17,6 @@ char *_strchr(char *s, char c)
 		{
 			return (s);
 		}
-		if (!*s)
-		{
-			return (0);
-		}
 	}
 	return (0);
 }
