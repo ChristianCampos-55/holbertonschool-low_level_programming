@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
- * *_strchr - find a specific character in a string.
+ * _strchr - find a specific character in a string.
  * @s: string to look in.
  * @c: character to find in string.
  * Return: Always 0.
