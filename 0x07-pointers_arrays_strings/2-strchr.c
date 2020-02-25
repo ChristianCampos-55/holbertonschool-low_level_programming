@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "holberton.h"
 
 /**
@@ -8,15 +9,20 @@
  */
 char *_strchr(char *s, char c)
 {
-	int count;
-
-	for (count = 0; s[count] != '\0'; count++)
-	{
-		s++;
-		if (c == s[count])
-		{
-			return (s);
-		}
-	}
-	return (0);
+while (*s != '\0')
+{
+if (c == *s)
+{
+return (s);
+}
+s++;
+}
+if (*s == c)
+{
+return (s);
+}
+else
+{
+return(NULL);
+}
 }
