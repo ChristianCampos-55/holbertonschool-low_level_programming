@@ -6,7 +6,7 @@
  * @argv: argument vector.
  * Return: 0 for success and 1 for error.
  */
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 if (argc != 3)
 {
@@ -17,5 +17,5 @@ else
 {
 printf("%i\n", atoi(argv[1]) * atoi(argv[2]));
 }
-return (0);
+ return (0);
 }
