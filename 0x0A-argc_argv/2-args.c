@@ -11,8 +11,8 @@ int a = 0;
 
 while(a < argc)
 {
-printf("%s", argv[a]);
 a++;
+printf("%s", argv[a]);
 }
 return (0);
 }
