@@ -7,11 +7,10 @@
  */
 int main(int argc, char *argv[])
 {
-int a = 0;
+int a;
 
-while(a < argc)
+for(a = 0; a < argc; a++)
 {
-a++;
 printf("%s", argv[a]);
 }
 return (0);
