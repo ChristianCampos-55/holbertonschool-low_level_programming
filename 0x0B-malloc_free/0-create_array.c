@@ -9,10 +9,10 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	unsigned int a = 0;
+	unsigned int a;
 	char *array;
 
-	array = (char *)malloc(size * sizeof(char));
+	array = malloc(size * sizeof(char));
 
 	for (a = 0; a < size; a++)
 	{
