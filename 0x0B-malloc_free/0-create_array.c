@@ -16,10 +16,14 @@ char *create_array(unsigned int size, char c)
 
 	for (a = 0; a < size; a++)
 	{
+		if (array == NULL)
+		{
+			return (NULL);
+		}
 		array[a] = c;
 	}
 
-	if (array == NULL || size == 0)
+	if (size == 0)
 	{
 		return (NULL);
 	}
