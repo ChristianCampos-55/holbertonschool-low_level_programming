@@ -12,7 +12,6 @@ char *str_concat(char *s1, char *s2)
 	char *sum;
 	int a = 0;
 	int b = 0;
-	int c = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -27,28 +26,17 @@ char *str_concat(char *s1, char *s2)
 		b++;
 
 	sum = malloc(((a + b + 1)) * sizeof(char));
-
 	if (sum == NULL)
 		return (NULL);
 
-	a = 0;
-	b = 0;
-
-	while (s1[a])
+	for (a = 0; s1[a]; a++)
 	{
-		sum[c] = s1[a];
-		a++;
-		c++;
+		sum[a] = s1[a];
 	}
-	sum[c] = ' ';
-
-	while (s2[b])
+	for (b = 0; s2[b]; b++)
 	{
-		sum[c] = s2[b];
-		b++;
-		c++;
+		sum[a + b] = s2[b];
 	}
-	sum[c] = '\0';
-
+	sum[a + b] = '\0';
 	return (sum);
 }
