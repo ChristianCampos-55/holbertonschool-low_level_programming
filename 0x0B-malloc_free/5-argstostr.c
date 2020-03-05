@@ -24,9 +24,11 @@ for (b = 0; av[a][b]; b++)
 {
 count++;
 }
+count++;
 }
+count++;
 
-ptr = malloc((count + 2) * sizeof(char));
+ptr = malloc(sizeof(char) * count);
 if (ptr == NULL)
 return (NULL);
 
