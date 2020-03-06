@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
+#include "holberton.h"
 /**
  * _calloc - assings space in memory for an array.
  * @nmemb: lenght of the array.
@@ -12,17 +11,21 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *p;
+char *p;
+unsigned int a;
 
-	if (nmemb == 0)
-		return (NULL);
+if (nmemb == 0)
+return (NULL);
 
-	if (nmemb == 0)
-		return (NULL);
+if (size == 0)
+return (NULL);
 
-	p = malloc(sizeof(size) * nmemb);
-	if (p == NULL)
-		return (NULL);
+p = malloc(sizeof(size) * nmemb);
+if (p == NULL)
+return (NULL);
 
-	return (p);
+for (a = 0; a < (size * nmemb); a++)
+p[a] = 0;
+
+return (p);
 }
