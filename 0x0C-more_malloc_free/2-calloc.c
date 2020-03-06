@@ -20,12 +20,12 @@ return (NULL);
 if (size == 0)
 return (NULL);
 
-p = malloc(sizeof(size) * nmemb);
+p = malloc(size * nmemb);
 if (p == NULL)
 return (NULL);
 
 for (a = 0; a < (size * nmemb); a++)
-p[a] = 0;
+p[a] = 0x00;
 
 return (p);
 }
