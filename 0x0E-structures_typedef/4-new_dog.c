@@ -28,7 +28,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		namenew[b] = name[b];
 	}
-	namenew[b] = '\0';
 
 	for (a = 0; owner[a]; a++)
 	{}
@@ -41,7 +40,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		ownernew[b] = owner[b];
 	}
-	ownernew[b] = '\0';
 
 	ndog = malloc(sizeof(dog_t));
 	if (ndog == NULL)
