@@ -3,7 +3,6 @@
 #include <stdlib.h>
 /**
  * free_dog - func to free struc dog.
- * @dog_t: struct dog to free.
  * @d: pointer to struct.
  *
  * Return: Always 0.
