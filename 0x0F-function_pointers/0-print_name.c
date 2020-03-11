@@ -1,4 +1,4 @@
- /**
+/**
  * print_name - prints a name.
  * @name: name to print.
  * @f: function of named printed.
