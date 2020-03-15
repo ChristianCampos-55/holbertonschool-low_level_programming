@@ -60,24 +60,23 @@ void print_all(const char * const format, ...)
 	};
 
 	va_list ap;
-	char *spc = ", ";
+	char *spc = "";
 
 	int a = 0;
 	int b;
 
 	va_start(ap, format);
 
-	while (format[a])
+	while (format != NULL && format[a] != '\0')
 	{
 		b = 0;
 		while (array[b].op != NULL)
 		{
 			if (format[a] == (array[b]).op[0])
 			{
-				(array[b]).f(ap);
-
-				if (format[a + 1] != '\0')
 					printf("%s", spc);
+					array[b].f(ap);
+					spc = ", ";
 			}
 			b++;
 		}
