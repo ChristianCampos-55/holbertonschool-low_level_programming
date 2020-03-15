@@ -56,7 +56,7 @@ void print_all(const char * const format, ...)
 		{"i", print_int},
 		{"s", print_str},
 		{"f", print_float},
-		{NULL, NULL}
+		{'\0', '\0'}
 	};
 
 	va_list ap;
@@ -67,7 +67,7 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 
-	while (format != NULL && format[a] != '\0')
+	while (format[a])
 	{
 		b = 0;
 		while (array[b].op != NULL)
@@ -76,7 +76,7 @@ void print_all(const char * const format, ...)
 			{
 				(array[b]).f(ap);
 
-				if (format[a + 1] != NULL)
+				if (format[a + 1] != '\0')
 					printf("%s", spc);
 			}
 			b++;
