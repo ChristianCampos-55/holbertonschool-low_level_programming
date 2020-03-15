@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdarg.h>
-
+#include "variadic_functions.h"
 /**
  * print_strings - prints a string.
  * @separator: char to separate strings.
@@ -20,7 +18,15 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (it = 0; it < n; it++)
 	{
 		string = va_arg(ap, char *);
-		printf("%s", string);
+
+		if (string != NULL)
+		{
+			printf("%s", string);
+		}
+		else
+		{
+			printf("(nil)");
+		}
 		if ((it < (n - 1)) && separator != NULL)
 			printf("%s", separator);
 	}
