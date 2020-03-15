@@ -14,7 +14,7 @@
 
 typedef struct opt_a
 {
-	char *op;
+	char op;
 	void (*f)(va_list);
 } opt;
 

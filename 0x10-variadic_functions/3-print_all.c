@@ -1,73 +1,87 @@
-#include <stdarg.h>
-#include <stdio.h>
+#include "variadic_functions.h"
 
-typedef struct printer
-{
-	char s;
-	void (*f)(va_list);
-} pr;
-
+/**
+ * print_char - prints a char.
+ * @ap: char to print.
+ */
 void print_char(va_list ap)
 {
 	printf("%c", va_arg(ap, int));
 }
 
+/**
+ * print_int - prints a int.
+ * @ap: int to print.
+ */
 void print_int(va_list ap)
 {
 	printf("%i", va_arg(ap, int));
 }
 
+/**
+ * print_str - prints a string.
+ * @ap: string to print.
+ */
 void print_str(va_list ap)
 {
-	printf("%s", va_arg(ap, char *));
+	char *s = va_arg(ap, char *);
+
+	if (s == '\0')
+	{
+		s = "(nil)";
+	}
+	printf("%s", s);
 }
 
+/**
+ * print_float - prints a float.
+ * @ap: float to print.
+ */
 void print_float(va_list ap)
 {
 	printf("%f", va_arg(ap, double));
 }
 
+/**
+ * print_all - prints all types of data given to it.
+ * @format: format specifiers.
+ *
+ * Return: always 0.
+ */
+
 void print_all(const char * const format, ...)
 {
-	pr array[] = {
+	opt array[] = {
 		{'c', print_char},
 		{'i', print_int},
 		{'s', print_str},
 		{'f', print_float},
-		{NULL, NULL}
+		{'\0', '\0'}
 	};
+
 	va_list ap;
-	char  *s = "";
+	char *s = ", ";
 
-	int a = 0, b = 0;
+	int a = 0;
+	int b;
 
-	va_start (ap, format);
+	va_start(ap, format);
 
 	while (format[a])
 	{
 		b = 0;
 		while (b < 4)
 		{
-			if (format[a] == (array[b]).s)
+			if (format[a] == (array[b]).op)
 			{
-				printf("%s", s);
 				(array[b]).f(ap);
-				s = ", ";
+
+				if (format[a + 1] != '\0')
+					printf("%s", s);
 			}
 			b++;
 		}
 		a++;
 	}
 	printf("\n");
-}
-
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	print_all("ceis", 'H', 0, "lberton");
-	return (0);
 }
