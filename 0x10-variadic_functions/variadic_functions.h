@@ -1,6 +1,17 @@
 #ifndef VARIADIC_FUNCTIONS_H
 #define VARIADIC_FUNCTIONS_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdarg.h>
+
+/**
+ *struct opt_a - struct to call point to functions.
+ * @opt_a: name of operator.
+ * @f: function to call.
+ */
+
 typedef struct opt_a
 {
 	char *op;

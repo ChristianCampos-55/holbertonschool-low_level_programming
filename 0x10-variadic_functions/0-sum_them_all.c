@@ -1,7 +1,4 @@
-#include <stdarg.h>
 #include "variadic_functions.h"
-#include <stdlib.h>
-
 /**
  * sum_them_all - func to sum all parameters received.
  * @n: number of parameters to receive.
