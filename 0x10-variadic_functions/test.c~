@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+void main()
+{
+printf("hola '  %%  a\bd  \t asd\b \r chao");
+write(1, "\r", 2);
+}
