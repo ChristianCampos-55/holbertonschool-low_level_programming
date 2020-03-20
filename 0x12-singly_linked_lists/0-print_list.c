@@ -11,7 +11,7 @@ size_t print_list(const list_t *h)
 
 	for (counter = 0; h; counter++)
 	{
-		if(h->str == '\0')
+		if (h->str == '\0')
 			printf("[0] (nil)\n");
 
 		else
