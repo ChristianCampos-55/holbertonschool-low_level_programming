@@ -74,9 +74,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[a] == (array[b]).op[0])
 			{
-					printf("%s", spc);
-					array[b].f(ap);
-					spc = ", ";
+				printf("%s", spc);
+				array[b].f(ap);
+				spc = ", ";
 			}
 			b++;
 		}
