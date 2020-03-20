@@ -11,9 +11,9 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new;
+	list_t *new = 0;
 	list_t *tmp = *head;
-	unsigned int count;
+	unsigned int count = 0;
 
 	if (head == NULL)
 		return (NULL);
@@ -22,7 +22,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	     if (new == NULL)
 		     return (NULL);
 
-	     for (count = 0; str[count]; count++)
+	     for (; str[count]; count++)
 	     {}
 
 	     new->str = strdup(str);
