@@ -22,8 +22,10 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	for (; text_content[length] != '\0'; length++)
-	{}
+	while (text_content[length] != '\0')
+	{
+		length++;
+	}
 
 	if (!text_content)
 	{
