@@ -22,17 +22,17 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	while (text_content[length] != '\0')
-	{
-		length++;
-	}
-	length += 1;
-
 	if (!text_content)
 	{
 		close(fd);
 		return (1);
 	}
+
+	while (text_content[length] != '\0')
+	{
+		length++;
+	}
+
 
 	written = write(fd, text_content, length);
 	if (written == -1)
