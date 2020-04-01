@@ -9,8 +9,8 @@
  */
 int main(int ac, char **av)
 {
-	int file_from = 0, file_to = 0, written = 0, red = 0,
-		temp = 0;
+	int file_from = 0, file_to = 0, written = 0, red = 1024;
+	int temp = 0;
 	char buff[1024];
 
 	if (ac != 3)
@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	if (file_from == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 			av[1]), exit(98);
-	file_to = open(av[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
+	file_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n",
 			av[2]), exit(99);
