@@ -9,7 +9,7 @@
  */
 int main(int ac, char **av)
 {
-	int file_from = 0, file_to = 0, written = 0, red = 1024;
+	int file_from = 0, file_to = 0, written = 0, red = 0;
 	int temp = 0;
 	char buff[1024];
 
@@ -24,8 +24,7 @@ int main(int ac, char **av)
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n",
 			av[2]), exit(99);
-	while (red == 1024)
-	{
+	do{
 		red = read(file_from, buff, 1024);
 		if (red == -1)
 			dprintf(STDERR_FILENO,
@@ -36,7 +35,7 @@ int main(int ac, char **av)
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to file %s\n",
 				av[2]), exit(99);
-	}
+	} while (red == 1024);
 	temp = close(file_from);
 	if (temp == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_from),
