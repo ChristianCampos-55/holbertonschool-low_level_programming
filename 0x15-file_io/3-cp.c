@@ -39,11 +39,11 @@ int main(int ac, char **av)
 	}
 	temp = close(file_from);
 	if (temp == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_from);
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_from),
+			exit(100);
 	temp = close(file_to);
 	if (temp == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_to);
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_to),
+			exit(100);
 	return (0);
 }
