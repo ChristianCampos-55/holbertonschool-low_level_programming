@@ -10,7 +10,7 @@
 
 int main(int ac, char **av)
 {
-	int file_from = 0, file_to = 0, written = 0, red = 0;
+	int file_from = 0, file_to = 0, written = 0, red = 1024;
 	char buff[1024];
 
 	if (ac != 3)
@@ -20,18 +20,23 @@ int main(int ac, char **av)
 	if (file_from == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 			av[1]), exit(98);
-	file_to = open(av[2], O_TRUNC | O_CREAT | O_RDWR, 0664);
+	file_to = open(av[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n",
 			av[2]), exit(99);
-	red = read(file_from, buff, 1024);
-	if (red == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
-			av[1]), exit(98);
-	written = write(file_to, buff, red);
-	if (written == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n",
-			av[2]), exit(99);
+	while (red == 1024)
+	{
+		red = read(file_from, buff, 1024);
+		if (red == -1)
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n",
+				av[1]), exit(98);
+		written = write(file_to, buff, red);
+		if (written == -1)
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to file %s\n",
+				av[2]), exit(99);
+	}
 	close(file_from);
 	if (file_from == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", av[1]);
