@@ -32,9 +32,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		dexer = dexer->next;
 
 	dexer = dexer->prev;
+	(dexer->prev)->next = new_node;
 	new_node->next = dexer->next;
 	new_node->prev = dexer->prev;
-	dexer->next = new_node;
+	(dexer->next)->prev = new_node;
 	new_node->n = n;
 	return (new_node);
 }
