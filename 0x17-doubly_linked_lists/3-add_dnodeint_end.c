@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - adds node at end of DLL.
+ * add_dnodeint_end - adds node at end of DLL.
  * @head: DP to head of DLL.
  * @n: data to add to new node.
  *
