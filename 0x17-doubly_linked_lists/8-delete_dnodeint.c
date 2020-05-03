@@ -11,10 +11,10 @@
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 
-	unsigned int countr;
+	unsigned int countr = NULL;
 	dlistint_t *dummy = (*head);
 
-	if (!(*head))
+	if (!(*head) || !head)
 		return (-1);
 
 	if (index == 0 && (*head)->next != NULL)
