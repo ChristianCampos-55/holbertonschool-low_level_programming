@@ -34,7 +34,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			adder = adder->next;
 	}
 
-	val_add = malloc(sizeof(hash_table_t));
+	val_add = malloc(sizeof(hash_node_t));
 	if (!val_add)
 		return (0);
 
