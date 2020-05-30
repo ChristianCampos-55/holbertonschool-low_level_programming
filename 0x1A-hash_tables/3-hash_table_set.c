@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * hash_table_set - Includes or updates an element in the hash table
@@ -12,7 +13,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int position = 0, it = 0;
+	unsigned long int position = 0;
 	hash_node_t *adder = NULL, *val_add = NULL;
 
 	if (!ht || !key || !value || key == '\0')
@@ -26,7 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (strcmp(key, adder->key) == 0)
 		{
 			free(adder->value);
-			adder->value = value;
+			adder->value = strdup(value);
 			return (1);
 		}
 		else
@@ -37,8 +38,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!val_add)
 		return (0);
 
-	val_add->key = key;
-	val_add->value = value;
+	val_add->key = strdup(key);
+	val_add->value = strdup(value);
 	val_add->next = ht->array[position];
 	ht->array[position] = val_add;
 	return (1);
