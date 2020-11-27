@@ -2,30 +2,36 @@
 #include <stdlib.h>
 
 /**
- * hash_table_delete - func to delete a hash table
- * @ht: hashtable to delete
+ * hash_table_delete - function that deletes a hash table.
+ * @ht: Hash table to recieve
  * Return: Zilch
  */
 
 void hash_table_delete(hash_table_t *ht)
 {
-	unsigned long int position = 0;
-	hash_node_t *iter = NULL;
+	unsigned long int pos = 0;
+	hash_node_t *aux = NULL, *tmp = NULL;
 
-	if (!ht)
+	if (ht == NULL)
 		return;
 
-	for (; position < ht->size; position++)
+	for (; pos < ht->size; pos++)
 	{
-		while (ht->array[position])
+		if (ht->array[pos] == NULL)
+			continue;
+
+		aux = ht->array[pos];
+		while (aux != NULL)
 		{
-			iter = (ht->array[position])->next;
-			free((ht->array[position])->key);
-			free((ht->array[position])->value);
-			free(ht->array[position]);
-			ht->array[position] = iter;
+			tmp = aux;
+			aux = aux->next;
+			free(tmp->key);
+			free(tmp->value);
+			free(tmp);
 		}
 	}
+
 	free(ht->array);
 	free(ht);
+	ht = NULL;
 }
