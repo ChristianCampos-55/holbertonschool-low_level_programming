@@ -33,7 +33,7 @@ int binary_search(int *array, size_t size, int value)
   unsigned int start = 0, end = size - 1, tmp = 0;
 
   if (array == NULL || size == 0)
-    return (-1);  
+    return (-1);
   while (start <= end)
   {
     arr_printer(array, start, end);
